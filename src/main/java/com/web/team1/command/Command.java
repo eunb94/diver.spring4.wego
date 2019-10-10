@@ -10,9 +10,8 @@ import lombok.Data;
 public class Command implements Order {
 	protected String action, domain, page, view;
 	protected HttpServletRequest request;
-	
-	@Override
 
+	@Override
 		public void execute() {
 			this.view = String.format(Constants.DOUBLE_PATH,"facade", "main");
 			System.out.println("커멘드뷰" + view);
