@@ -1,9 +1,9 @@
-package com.wego.web.dao;
+package com.wego.web.mappers;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 @Repository
-public interface DepartmentDAO {
+public interface DepartmentMapper {
 	public List<String> selectDName();
 }

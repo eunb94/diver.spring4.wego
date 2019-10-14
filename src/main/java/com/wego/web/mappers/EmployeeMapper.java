@@ -1,10 +1,10 @@
-package com.wego.web.dao;
+package com.wego.web.mappers;
 
 import com.wego.web.domains.DepartmentDTO;
 import com.wego.web.domains.EmployeeDTO;
 import org.springframework.stereotype.Repository;
 @Repository 
-public interface EmployeeDAO {
+public interface EmployeeMapper {
 	public void insertEmployee(EmployeeDTO param);
 	public EmployeeDTO selectByempNoeName(EmployeeDTO param,DepartmentDTO db);
 }
