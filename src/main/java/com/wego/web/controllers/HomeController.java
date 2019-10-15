@@ -33,10 +33,6 @@ public class HomeController {
 		//test
 	}
 	
-	@GetMapping("/info")
-	public String findAdminById(@RequestParam("eid") String eid,
-			@RequestParam("pwd") String pwd) {
-		return "home";
-	}
+
 	
 }
