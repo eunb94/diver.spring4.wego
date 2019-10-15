@@ -5,10 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.wego.web.services.DepartmentService;
+import com.wego.web.services.AdminService;
+
 
 @Controller
-public class DepartmentController {
+public class AdminController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	@Autowired DepartmentService departmentService;
+	@Autowired AdminService adminService;
 }
