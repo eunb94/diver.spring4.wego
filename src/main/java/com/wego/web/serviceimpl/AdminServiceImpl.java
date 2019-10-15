@@ -10,7 +10,7 @@ import com.wego.web.services.AdminService;
 public class AdminServiceImpl implements AdminService{
 	@Autowired AdminMapper adminMapper;
 	@Override
-	public int countAdmins() {
+	public int findTheNumberOfAdmins() {
 		return adminMapper.countAdmins();
 		
 	}

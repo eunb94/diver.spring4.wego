@@ -10,6 +10,6 @@ public class AdminDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private String empNo,eName,job,mgr,hireDate,sal,comm,deptNo;
+	private String eid, pwd, empNo,eName,job,mgr,hireDate,sal,comm,deptNo;
 
 }

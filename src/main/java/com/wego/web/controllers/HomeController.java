@@ -7,8 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.wego.web.serviceimpl.AdminServiceImpl;
 
@@ -23,11 +24,17 @@ public class HomeController {
 	@Autowired AdminServiceImpl adminService;
 	
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@GetMapping("/")
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome {}.", "HomeController");
-		int count = adminService.countAdmins();	
+		int count = adminService.findTheNumberOfAdmins();	
 		model.addAttribute("count", count);
+		return "home";
+	}
+	
+	@GetMapping("/info")
+	public String findAdminById(@RequestParam("eid") String eid,
+			@RequestParam("pwd") String pwd) {
 		return "home";
 	}
 	

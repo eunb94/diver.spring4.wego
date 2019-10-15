@@ -4,12 +4,23 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.wego.web.services.AdminService;
+import com.wego.web.serviceimpl.AdminServiceImpl;
 
 
 @Controller
+@RequestMapping("/admin/*")
 public class AdminController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	@Autowired AdminService adminService;
+	@Autowired AdminServiceImpl adminService;
+	
+	@GetMapping("/count")
+	public String count(Model model) {
+		int count = adminService.findTheNumberOfAdmins();
+		model.addAttribute("count", count);
+		return "home";
+	}
 }

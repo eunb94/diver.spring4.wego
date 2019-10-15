@@ -5,6 +5,6 @@ import org.springframework.stereotype.Component;
 @Component
 public interface AdminService {
 	
-	public int countAdmins();
+	public int findTheNumberOfAdmins();
 
 }
