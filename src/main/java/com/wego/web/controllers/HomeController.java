@@ -30,6 +30,7 @@ public class HomeController {
 		int count = adminService.findTheNumberOfAdmins();	
 		model.addAttribute("count", count);
 		return "home";
+		//test
 	}
 	
 	@GetMapping("/info")
