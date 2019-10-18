@@ -21,7 +21,7 @@ import com.wego.web.domains.UserDTO;
 		@Autowired Map<String, Object> map;
 		
 		@PostMapping("/join")
-		public @ResponseBody Map<String, String> join(@RequestBody UserDTO user){
+		public @ResponseBody Map<?, ?> join(@RequestBody UserDTO user){
 			logger.info("AJAX가 보낸 아이디와 비번{}", user.getUid()+", "+user.getPwd());
 			HashMap<String, String> map = new HashMap<>();
 			map.put("uid", user.getUid());
@@ -29,4 +29,18 @@ import com.wego.web.domains.UserDTO;
 			logger.info("map에 담긴아이디와 비번{}+", map.get("uid"),map.get("pwd"));
 			return map;
 		}
+			
+		
+		@PostMapping("/login")
+		public @ResponseBody Map<?, ?> login(@RequestBody UserDTO user){
+			logger.info("AJAX 로그인 {}", user.getUid()+", "+user.getPwd());
+			HashMap<String, String> map = new HashMap<>();
+			map.put("uid", user.getUid());
+			map.put("pwd", user.getPwd());
+			logger.info("로그인 map에 담긴 아이디 비번 {}+", map.get("uid"), map.get("pwd"));
+			return map;
+		}
+		
+		
+		
 }
